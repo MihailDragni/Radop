@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'radop';
-  src: url('../font/radop.eot?52447005');
-  src: url('../font/radop.eot?52447005#iefix') format('embedded-opentype'),
-       url('../font/radop.woff2?52447005') format('woff2'),
-       url('../font/radop.woff?52447005') format('woff'),
-       url('../font/radop.ttf?52447005') format('truetype'),
-       url('../font/radop.svg?52447005#radop') format('svg');
+  src: url('../font/radop.eot?11753139');
+  src: url('../font/radop.eot?11753139#iefix') format('embedded-opentype'),
+       url('../font/radop.woff2?11753139') format('woff2'),
+       url('../font/radop.woff?11753139') format('woff'),
+       url('../font/radop.ttf?11753139') format('truetype'),
+       url('../font/radop.svg?11753139#radop') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'radop';
-    src: url('../font/radop.svg?52447005#radop') format('svg');
+    src: url('../font/radop.svg?11753139#radop') format('svg');
   }
 }
 */
@@ -86,8 +86,10 @@
 .icon-arrow-radop-left:before { content: '\e81d'; } /* '' */
 .icon-arrow-radop-right:before { content: '\e81e'; } /* '' */
 .icon-trash-radop:before { content: '\e81f'; } /* '' */
-.icon-cog:before { content: '\e822'; } /* '' */
+.icon-settings:before { content: '\e820'; } /* '' */
+.icon-account:before { content: '\e821'; } /* '' */
+.icon-eye:before { content: '\e822'; } /* '' */
+.icon-eye-off:before { content: '\e823'; } /* '' */
 .icon-your-order:before { content: '\e825'; } /* '' */
 .icon-location-1:before { content: '\e826'; } /* '' */
 .icon-star-half-alt:before { content: '\f123'; } /* '' */
-.icon-user-o:before { content: '\f2c0'; } /* '' */
