@@ -516,3 +516,33 @@
     }
   }
 }
+
+.liked-goods {
+  &__title {
+    padding-top: 30px;
+    margin-bottom: 10px;
+  }
+  &__banner {
+    margin-bottom: 30px;
+  }
+
+  &__body {
+    padding-bottom: 130px;
+  }
+
+  &__list {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.goods-card {
+  margin-bottom: 0;
+}

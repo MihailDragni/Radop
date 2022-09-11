@@ -4175,6 +4175,31 @@ footer .section-footer .col-site-footer .wrap-social .social-link:first-child {
   border: 2px solid #e82d25;
 }
 
+.liked-goods__title {
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+.liked-goods__banner {
+  margin-bottom: 30px;
+}
+.liked-goods__body {
+  padding-bottom: 130px;
+}
+.liked-goods__list {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
+}
+.liked-goods__text {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.goods-card {
+  margin-bottom: 0;
+}
+
 @-webkit-keyframes content {
   from {
     opacity: 0;
