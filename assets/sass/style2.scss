@@ -519,22 +519,52 @@
 
 .liked-goods {
   &__title {
-    padding-top: 30px;
+    padding-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
     margin-bottom: 10px;
   }
   &__banner {
-    margin-bottom: 30px;
+    margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
   }
 
   &__body {
-    padding-bottom: 130px;
+    padding-bottom: calc(50px + (130 - 50) * ((100vw - 320px) / (1440 - 320)));
   }
 
   &__list {
-    margin-bottom: 30px;
+    margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 15px;
+    @include md(1200) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include md(992) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md(768) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include md(500) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    @include md(1200) {
+      &:nth-child(-n + 2) {
+        display: none;
+      }
+    }
+    @include md(992) {
+      &:nth-child(-n + 4) {
+        display: none;
+      }
+    }
+    @include md(500) {
+      &:nth-child(-n + 5) {
+        display: none;
+      }
+    }
   }
 
   &__text {
