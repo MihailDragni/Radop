@@ -4287,10 +4287,14 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
 .order-parameters-table__tbody tr:nth-child(odd) {
   background-color: rgba(220, 220, 220, 0.3);
 }
+.order-parameters-table__tbody td:nth-child(n+3) {
+  font-size: 20px;
+}
 .order-parameters-table__tbody td:last-child {
   padding-right: 0;
 }
 .order-parameters-table__tfoot td {
+  font-size: 18px;
   padding: 0;
   padding-bottom: 15px;
 }
@@ -4309,6 +4313,7 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
 }
 .order-parameters-table__tfoot tr:last-child td {
   padding-top: 5px;
+  font-size: 20px;
 }
 .order-parameters-table__tfoot tr:last-child td:nth-child(2) {
   font-weight: 700;
