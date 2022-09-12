@@ -18,6 +18,7 @@
   font-weight: 300;
   font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1440 - 320)));
   line-height: 1.3;
+  padding-top: calc(20px + (30 - 20) * ((100vw - 320px) / (1440 - 320)));
   @include md(768) {
     display: flex;
     justify-content: center;
@@ -25,9 +26,7 @@
 }
 
 .my-account {
-  padding-top: 25px;
   &__title {
-    margin-bottom: 35px;
     margin-bottom: calc(20px + (35 - 20) * ((100vw - 320px) / (1440 - 320)));
   }
   &__wrapper {
@@ -519,7 +518,6 @@
 
 .liked-goods {
   &__title {
-    padding-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
     margin-bottom: 10px;
   }
   &__banner {
@@ -575,4 +573,171 @@
 
 .goods-card {
   margin-bottom: 0;
+}
+
+.order-parameters {
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__banner {
+    margin-bottom: calc(15px + (35 - 15) * ((100vw - 320px) / (1440 - 320)));
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    // max-width: 1110px;
+    width: 100%;
+    background: $white;
+    border: 1px solid #dcdcdc;
+    border-radius: 26px;
+    padding: 40px 65px 105px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: calc(15px + (25 - 15) * ((100vw - 320px) / (1440 - 320)));
+  }
+}
+
+.clients {
+  &__box {
+    width: calc(150px + (220 - 150) * ((100vw - 320px) / (1440 - 320)));
+    & div {
+      font-weight: 400;
+      &:not(:last-child) {
+        margin-bottom: calc(
+          15px + (25 - 15) * ((100vw - 320px) / (1440 - 320))
+        );
+      }
+
+      &:not(:first-child) {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+      }
+    }
+  }
+
+  &__name {
+    font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1440 - 320)));
+    line-height: 1.3;
+    color: rgba(0, 0, 0, 0.76);
+  }
+
+  &__location,
+  &__tel {
+    position: relative;
+    padding-left: calc(25px + (40 - 25) * ((100vw - 320px) / (1440 - 320)));
+    & i {
+      position: absolute;
+      left: 0;
+      color: $black;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+    }
+  }
+
+  &__tel {
+    & i {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__number-id {
+    font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1440 - 320)));
+    line-height: 1.3;
+    color: $blue;
+  }
+
+  &__row {
+    display: flex;
+    & span {
+      &:first-child {
+        color: $blue;
+        margin-right: 10px;
+      }
+      &:last-child {
+        align-self: center;
+      }
+    }
+  }
+}
+
+.order-parameters-table-responsive {
+  overflow-x: auto;
+}
+
+.order-parameters-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  & th,
+  & td {
+    padding: 15px;
+    line-height: 1.1;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+    &:nth-child(4) {
+      text-align: center;
+    }
+    &:last-child {
+      text-align: right;
+    }
+    @include md(992) {
+      padding: calc(10px + (15 - 10) * ((100vw - 320px) / (992 - 320)));
+    }
+  }
+
+  & th {
+    color: $blue;
+  }
+
+  &__tbody {
+    & tr:nth-child(odd) {
+      background-color: rgba(220, 220, 220, 0.3);
+    }
+    & td {
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__tfoot {
+    & td {
+      padding: 0;
+      padding-bottom: 15px;
+      &:nth-child(2) {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+    & tr {
+      &:first-child {
+        display: table-cell;
+        padding-top: 30px;
+      }
+      &:nth-child(3) {
+        & td:nth-child(n + 2) {
+          border-bottom: 1px solid #c4c4c4;
+        }
+      }
+      &:last-child {
+        & td {
+          padding-top: 5px;
+          &:nth-child(2) {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
 }
