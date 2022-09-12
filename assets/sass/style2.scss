@@ -587,6 +587,7 @@
   &__body {
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
   }
 
   &__wrapper {
@@ -596,23 +597,41 @@
     border: 1px solid #dcdcdc;
     border-radius: 26px;
     padding: 40px 65px 105px;
+    @include md(1200) {
+      padding: 30px 45px 85px;
+    }
+    @include md(992) {
+      padding: 20px 35px 75px;
+    }
+    @include md(768) {
+      padding: calc(15px + (20 - 15) * ((100vw - 320px) / (768 - 320)));
+    }
   }
 
   &__info {
     display: flex;
     justify-content: space-between;
     margin-bottom: calc(15px + (25 - 15) * ((100vw - 320px) / (1440 - 320)));
+    @include md(500) {
+      flex-direction: column;
+    }
   }
 }
 
 .clients {
   &__box {
     width: calc(150px + (220 - 150) * ((100vw - 320px) / (1440 - 320)));
+    @include md(500) {
+      width: auto;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
     & div {
       font-weight: 400;
       &:not(:last-child) {
         margin-bottom: calc(
-          15px + (25 - 15) * ((100vw - 320px) / (1440 - 320))
+          10px + (25 - 10) * ((100vw - 320px) / (1440 - 320))
         );
       }
 
@@ -631,7 +650,7 @@
   &__location,
   &__tel {
     position: relative;
-    padding-left: calc(25px + (40 - 25) * ((100vw - 320px) / (1440 - 320)));
+    padding-left: calc(30px + (40 - 30) * ((100vw - 320px) / (1440 - 320)));
     & i {
       position: absolute;
       left: 0;
@@ -639,12 +658,18 @@
       top: 50%;
       transform: translateY(-50%);
       font-size: 1.4rem;
+      @include md(500) {
+        font-size: 1.1rem;
+      }
     }
   }
 
   &__tel {
     & i {
       font-size: 1.3rem;
+      @include md(500) {
+        font-size: 1.1rem;
+      }
     }
   }
 
@@ -699,35 +724,47 @@
   }
 
   &__tbody {
-    & tr:nth-child(odd) {
-      background-color: rgba(220, 220, 220, 0.3);
+    & tr {
+      transition: all 0.3s;
+      &:nth-child(odd) {
+        background-color: rgba(220, 220, 220, 0.3);
+      }
+      &:hover {
+        background-color: #c4c4c4;
+      }
     }
     & td {
       &:nth-child(n + 3) {
-        font-size: 20px;
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1440 - 320)));
       }
       &:last-child {
         padding-right: 0;
+        @include md(768) {
+          padding-right: 10px;
+        }
       }
     }
   }
 
   &__tfoot {
     & td {
-      font-size: 18px;
+      font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1440 - 320)));
       padding: 0;
-      padding-bottom: 15px;
+      padding-bottom: calc(10px + (15 - 10) * ((100vw - 320px) / (1440 - 320)));
       &:nth-child(2) {
         text-align: left;
       }
       &:last-child {
         text-align: right;
+        @include md(768) {
+          padding-right: 10px;
+        }
       }
     }
     & tr {
       &:first-child {
         display: table-cell;
-        padding-top: 30px;
+        padding-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
       }
       &:nth-child(3) {
         & td:nth-child(n + 2) {
@@ -737,7 +774,7 @@
       &:last-child {
         & td {
           padding-top: 5px;
-          font-size: 20px;
+          font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1440 - 320)));
           &:nth-child(2) {
             font-weight: 700;
           }
