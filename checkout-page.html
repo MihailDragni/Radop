@@ -29,80 +29,124 @@
   <body>
     <main>
       <section class="checkout-page">
-        <div class="checkout-page__wrapper">
-          <h1 class="checkout-page__title title">Checkout</h1>
-          <div class="checkout-page__body">
-            <form action="#">
-              <ul class="checkout-page__inputs">
-                <li class="checkout-page__item">
-                  <label class="checkout-page__label" for="name">ФИО</label>
-                  <input class="checkout-page__field" type="text" id="name" />
-                </li>
-                <li class="checkout-page__item">
-                  <label class="checkout-page__label" for="city">Город</label>
-                  <input class="checkout-page__field" type="text" id="city" />
-                </li>
-                <li class="checkout-page__item">
-                  <label class="checkout-page__label" for="tel"
-                    >Номер телефона</label
-                  >
-                  <input class="checkout-page__field" type="tel" id="tel" />
-                </li>
-                <li class="checkout-page__item">
-                  <label class="checkout-page__label" for="adress">Адрес</label>
-                  <input class="checkout-page__field" type="text" id="adress" />
-                </li>
-                <li class="checkout-page__item">
-                  <label class="checkout-page__label" for="Email">Email</label>
-                  <input class="checkout-page__field" type="email" id="Email" />
-                </li>
-                <li class="checkout-page__item">
-                  <label class="checkout-page__label" for="text"
-                    >Примечания к заказу</label
-                  >
-                  <textarea
-                    name="textarea"
-                    id="text"
-                    placeholder="Type here"
-                  ></textarea>
-                </li>
-              </ul>
-              <div class="checkout-page__total">
-                <div class="shopping-cart-total">
-                  <div class="total-heading">
-                    <h3>Счёт к оплате</h3>
-                  </div>
-                  <div class="sc-details-wrap">
-                    <ul class="details-ul">
-                      <li class="item">
-                        <span class="left">Кол-во: </span
-                        ><span class="right">4 ед.</span>
-                      </li>
-                      <li class="item">
-                        <span class="left">Сумма: </span
-                        ><span class="right">330.00 MDL</span>
-                      </li>
-                      <li class="item">
-                        <span class="left">Скидка: </span
-                        ><span class="right">0.00 MDL</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="total-wrap">
-                    <p class="total-text">К оплате:</p>
-                    <span class="total">3012 MDL</span>
-                  </div>
-                  <div class="sc-buttons-wrap">
-                    <a href="#" class="sc-btn-checkout sc-btn"
-                      >Оформить заказ</a
+        <div class="container">
+          <div class="checkout-page__wrapper">
+            <div class="checkout-page__inner">
+              <h1 class="checkout-page__title title">Checkout</h1>
+              <form action="#" class="checkout-page__form">
+                <ul class="checkout-page__inputs">
+                  <li class="checkout-page__item">
+                    <label class="checkout-page__label" for="name">ФИО</label>
+                    <input class="checkout-page__field" type="text" id="name" />
+                  </li>
+                  <li class="checkout-page__item">
+                    <label class="checkout-page__label" for="city">Город</label>
+                    <input class="checkout-page__field" type="text" id="city" />
+                  </li>
+                  <li class="checkout-page__item">
+                    <label class="checkout-page__label" for="tel"
+                      >Номер телефона</label
                     >
-                    <a href="#" class="sc-btn-continuie sc-btn"
-                      >Продолжить покупки</a
+                    <input class="checkout-page__field" type="tel" id="tel" />
+                  </li>
+                  <li class="checkout-page__item">
+                    <label class="checkout-page__label" for="adress"
+                      >Адрес</label
                     >
-                  </div>
+                    <input
+                      class="checkout-page__field"
+                      type="text"
+                      id="adress"
+                    />
+                  </li>
+                  <li class="checkout-page__item">
+                    <label class="checkout-page__label" for="Email"
+                      >Email</label
+                    >
+                    <input
+                      class="checkout-page__field"
+                      type="email"
+                      id="Email"
+                    />
+                  </li>
+                  <li class="checkout-page__item">
+                    <label class="checkout-page__label" for="text"
+                      >Примечания к заказу</label
+                    >
+                    <textarea
+                      name="textarea"
+                      id="text"
+                      placeholder="Type here"
+                    ></textarea>
+                  </li>
+                </ul>
+                <div class="checkout-page__total total">
+                  <p class="total__title">Счет к оплате</p>
+                  <ul class="total__check-list">
+                    <li class="total__item">
+                      <span>Кол-во</span>
+                      <span>8 ед.</span>
+                    </li>
+                    <li class="total__item">
+                      <span>Сумма</span>
+                      <span>298 MDL</span>
+                    </li>
+                    <li class="total__item">
+                      <span>Скидка</span>
+                      <span>90 MDL</span>
+                    </li>
+                    <li class="total__item">
+                      <span>Доставка</span>
+                      <span>50 MDL</span>
+                    </li>
+                    <li class="total__item">
+                      <span>К оплате</span>
+                      <span>418 MDL</span>
+                    </li>
+                  </ul>
+                  <ul class="total__selects total-selects">
+                    <li
+                      class="total-selects__item total-selects__item--delivery"
+                    >
+                      <div class="dropdown">
+                        <div class="select">
+                          <span>Способ доставки</span>
+                          <i class="fa fa-chevron-left"></i>
+                        </div>
+                        <input type="hidden" name="delivery" />
+                        <ul class="dropdown-menu">
+                          <li id="courier">Курьер</li>
+                          <li id="pickup">Самовывоз</li>
+                          <li id="mail">Почта</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li
+                      class="total-selects__item total-selects__item--payment"
+                    >
+                      <div class="dropdown">
+                        <div class="select">
+                          <span>Способ оплаты</span>
+                          <i class="fa fa-chevron-left"></i>
+                        </div>
+                        <input type="hidden" name="payment" />
+                        <ul class="dropdown-menu">
+                          <li id="upon-receipt">при получении</li>
+                          <li id="card">картой</li>
+                          <li id="e-wallet">эл.кошелек</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  <button
+                    class="checkout-page__button total__button"
+                    type="submit"
+                  >
+                    Оформить заказ
+                  </button>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </section>

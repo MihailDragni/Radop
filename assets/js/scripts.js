@@ -28,11 +28,44 @@ document.addEventListener("DOMContentLoaded", () => {
   addNewArr(toggleIcon);
 });
 
-
-
-
-
 $(document).ready(function () {
+  const delivery = $(".total-selects__item--delivery .dropdown");
+  const payment = $(".total-selects__item--payment .dropdown");
+  const deliveryItem = $(
+    ".total-selects__item--delivery .dropdown .dropdown-menu li"
+  );
+  const paymentItem = $(
+    ".total-selects__item--payment .dropdown .dropdown-menu li"
+  );
+
+  function activeDropdown() {
+    $(this).attr("tabindex", 1).focus();
+    $(this).toggleClass("active");
+    $(this).find(".dropdown-menu").slideToggle(300);
+  }
+
+  function removeDropdown() {
+    $(this).removeClass("active");
+    $(this).find(".dropdown-menu").slideUp(300);
+  }
+
+  function setValue() {
+    $(this).parents(".dropdown").find("span").text($(this).text());
+    $(this)
+      .parents(".dropdown")
+      .find("input")
+      .attr("value", $(this).attr("id"));
+  }
+
+  delivery.click(activeDropdown);
+  payment.click(activeDropdown);
+
+  delivery.focusout(removeDropdown);
+  payment.focusout(removeDropdown);
+
+  deliveryItem.click(setValue);
+  paymentItem.click(setValue);
+
   $("#btn-catalog").hover(function () {
     if (!$(this).hasClass("active")) {
       $(this).find(".dropdown").css({
