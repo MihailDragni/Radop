@@ -26,6 +26,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   addNewArr(toggleIcon);
+
+  const options = document.querySelectorAll(".order__options");
+
+  const toggleOptions = (event) => {
+    [...options].forEach((elem) => {
+      const dropdownElem = elem.querySelector(".order-dropdown");
+      if (event.target === elem) {
+        dropdownElem.classList.toggle("order-dropdown--active");
+      } else {
+        dropdownElem.classList.remove("order-dropdown--active");
+      }
+      document.addEventListener("click", function (event) {
+        if (event.target !== elem) {
+          dropdownElem.classList.remove("order-dropdown--active");
+        }
+      });
+    });
+  };
+
+  const orderOptionsArr = (arr) => {
+    return [...arr].forEach((element) => {
+      element.addEventListener("click", toggleOptions);
+    });
+  };
+  orderOptionsArr(options);
 });
 
 $(document).ready(function () {

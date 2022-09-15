@@ -3732,6 +3732,7 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
 }
 
 .my-account-details {
+  width: 100%;
   padding: calc(15px + 15 * (100vw - 320px) / 1120);
   background-color: #fff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -3783,12 +3784,17 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   }
 }
 .my-account-details__text {
-  max-width: 290px;
+  max-width: 390px;
   width: 100%;
   font-size: 14px;
   color: #4f4f4f;
   line-height: 1.3;
   font-weight: 300;
+}
+@media (max-width: 1400px) {
+  .my-account-details__text {
+    max-width: 290px;
+  }
 }
 @media (max-width: 578px) {
   .my-account-details__text {
@@ -3876,7 +3882,6 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
 }
 
 .my-orders {
-  max-width: 920px;
   width: 100%;
 }
 .my-orders__item:not(:last-child) {
@@ -3907,6 +3912,7 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   font-size: 12px;
   line-height: 1.3;
   color: #000;
+  flex: 1 1 auto;
 }
 @media (max-width: 500px) {
   .order__block:not(:last-child) {
@@ -3916,6 +3922,7 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
 .order__block:last-child {
   display: flex;
   column-gap: 85px;
+  justify-content: space-between;
 }
 @media (max-width: 1200px) {
   .order__block:last-child {
@@ -4020,6 +4027,7 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   position: relative;
   padding-right: 10px;
   cursor: pointer;
+  white-space: nowrap;
 }
 @media (max-width: 500px) {
   .order__options {
@@ -4037,6 +4045,39 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   font-size: 5px;
   margin: 0;
   padding: 0;
+  z-index: 100;
+}
+
+.order-dropdown {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  z-index: 99;
+  padding: 0;
+  background-color: #fff;
+  border: 0 solid transparent;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.order-dropdown--active {
+  height: 100px;
+  padding: 5px 0;
+  border: 1px solid #c4c4c4;
+}
+.order-dropdown__item:not(:last-child) {
+  margin-bottom: 5px;
+}
+.order-dropdown__link {
+  padding: 5px 10px;
+  color: #000;
+  display: block;
+}
+.order-dropdown__link:hover {
+  background-color: rgba(0, 104, 167, 0.1);
+  color: #0068a7;
 }
 
 .gratitude__banner {
@@ -4372,7 +4413,6 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   align-items: center;
 }
 .checkout-page__inner {
-  max-width: 1130px;
   width: 100%;
 }
 .checkout-page__title {
@@ -4397,17 +4437,22 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   }
 }
 .checkout-page__inputs {
-  flex: 0 1 60%;
   padding: 90px 95px 55px;
   background-color: #fff;
   box-shadow: 1px 1px 86px rgba(0, 0, 0, 0.15);
   border-radius: 22px;
-  width: calc(280px + 450 * (100vw - 320px) / 1120);
+  width: 100%;
 }
 @media (max-width: 1200px) {
   .checkout-page__inputs {
     padding: calc(30px + 40 * (100vw - 320px) / 880);
     padding-bottom: 15px;
+  }
+}
+@media (max-width: 992px) {
+  .checkout-page__inputs {
+    flex: 0 1 60%;
+    width: calc(280px + 450 * (100vw - 320px) / 1120);
   }
 }
 @media (max-width: 578px) {
@@ -4417,7 +4462,6 @@ header .section-header .row-main .header-account .nav-drill.nav-is-toggled::afte
   }
 }
 .checkout-page__item {
-  max-width: 540px;
   width: 100%;
   display: block;
 }
